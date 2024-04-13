@@ -36,7 +36,7 @@ const Form = ({ addContact }) => {
   return (
     <>
       <form className={css.form} onSubmit={handleSubmit}>
-        {/* Pole tekstowe dla imienia */}
+        {/* Pole tekstowe */}
         <label className={css.label}>
           Name
           <br />
@@ -77,9 +77,9 @@ const Form = ({ addContact }) => {
   );
 };
 
-// Określenie wymaganych typów dla propsów komponentu Form
+
 Form.propTypes = {
-  addContact: PropTypes.func.isRequired, // Funkcja do dodawania kontaktu jest wymagana
+  addContact: PropTypes.func.isRequired,
 };
 
-export default Form; // Eksportowanie komponentu Form
+export default Form;

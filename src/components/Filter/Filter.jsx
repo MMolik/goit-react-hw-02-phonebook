@@ -22,8 +22,8 @@ export const Filter = ({ filterValue, handleFilterChange }) => {
   );
 };
 
-// Określenie wymaganych typów dla propsów komponentu Filter
+
 Filter.propTypes = {
-  filterValue: PropTypes.string.isRequired, // Wartość filtra musi być stringiem i jest wymagana
-  handleFilterChange: PropTypes.func.isRequired, // Funkcja obsługująca zmianę filtra musi być funkcją i jest wymagana
+  filterValue: PropTypes.string.isRequired,
+  handleFilterChange: PropTypes.func.isRequired, 
 };

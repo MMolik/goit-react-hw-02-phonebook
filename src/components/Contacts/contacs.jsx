@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'; 
-import css from './contacs.module.css'; 
+import PropTypes from 'prop-types';
+import css from './contacs.module.css';
 
 // Definicja komponentu Contacts
 export const Contacts = ({ contacts, deleteContact }) => {
   // Funkcja obsługująca usuwanie kontaktu
-  const handleDelete = (id) => {
-    deleteContact(id); // Wywołanie funkcji deleteContact z przekazanym identyfikatorem kontaktu jako argumentem
+  const handleDelete = id => {
+    deleteContact(id); // Wywołanie funkcji deleteContact 
   };
 
   // Renderowanie listy kontaktów
@@ -31,14 +31,13 @@ export const Contacts = ({ contacts, deleteContact }) => {
   );
 };
 
-// Określenie wymaganych typów dla propsów komponentu Contacts
 Contacts.propTypes = {
-  deleteContact: PropTypes.func.isRequired, // Funkcja do usuwania kontaktu musi być funkcją i jest wymagana
-  contacts: PropTypes.arrayOf( // Tablica kontaktów
-    PropTypes.shape({ // Każdy kontakt musi być obiektem z określonymi polami
-      id: PropTypes.string.isRequired, // Pole id musi być stringiem i jest wymagane
-      name: PropTypes.string.isRequired, // Pole name musi być stringiem i jest wymagane
-      number: PropTypes.string.isRequired, // Pole number musi być stringiem i jest wymagane
+  deleteContact: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
-  ).isRequired, // Tablica kontaktów jest wymagana
+  ).isRequired,
 };

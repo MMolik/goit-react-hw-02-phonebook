@@ -1,10 +1,11 @@
-import React, { Component } from 'react'; 
-import { nanoid } from 'nanoid'; // Importowanie funkcji nanoid z biblioteki nanoid
+import React, { Component } from 'react';
+import { nanoid } from 'nanoid'; // libka do generowania kluczy
 import css from './App.module.css';
-import Form from './Form/Form'; 
+import Form from './Form/Form';
 import { Contacts } from './Contacts/contacs';
-import { Filter } from './Filter/Filter'; 
+import { Filter } from './Filter/Filter';
 
+//dane podane w zadaniu
 export class App extends Component {
   state = {
     contacts: [
@@ -66,7 +67,10 @@ export class App extends Component {
         <Form addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} onChangeInput={this.onChangeInput} />
-        <Contacts deleteContact={this.deleteContact} contacts={this.filterContacts()} />
+        <Contacts
+          deleteContact={this.deleteContact}
+          contacts={this.filterContacts()}
+        />
       </div>
     );
   }
