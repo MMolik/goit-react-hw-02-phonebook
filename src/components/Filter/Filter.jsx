@@ -1,19 +1,16 @@
-import PropTypes from 'prop-types'; 
-import css from './Filter.module.css'; 
+import PropTypes from 'prop-types';
+import css from './Filter.module.css';
 
-// Definicja komponentu Filter
-export const Filter = ({ filterValue, handleFilterChange }) => {
-  // Renderowanie formularza 
+export const Filter = ({ filter, onChangeInput }) => {
   return (
     <>
       <label className={css.text}>
         Find contacts by name
         <br />
-        {/* Pole tekstowe */}
         <input
           className={css.newContacts}
-          onChange={handleFilterChange}
-          value={filterValue}
+          onChange={onChangeInput}
+          value={filter}
           type="text"
           name="filter"
         />
@@ -22,8 +19,7 @@ export const Filter = ({ filterValue, handleFilterChange }) => {
   );
 };
 
-
 Filter.propTypes = {
-  filterValue: PropTypes.string.isRequired,
-  handleFilterChange: PropTypes.func.isRequired, 
+  filter: PropTypes.string.isRequired,
+  onChangeInput: PropTypes.func.isRequired,
 };
